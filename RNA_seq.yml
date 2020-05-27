@@ -1,0 +1,14 @@
+queue: batchq
+threads: 8
+
+hisat:
+    index: /databank/igenomes/Homo_sapiens/UCSC/hg19/Sequence/HISAT2/genome 
+    options:
+    
+featureCounts:
+    gtf: /databank/igenomes/Homo_sapiens/UCSC/hg19/Annotation/Genes/genes.gtf 
+    output: RNA_seq_counts.csv
+    options: -s 1 
+
+picard:
+    reference: /databank/igenomes/Homo_sapiens/UCSC/hg19/Sequence/WholeGenomeFasta/genome.fa
