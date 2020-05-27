@@ -113,8 +113,8 @@ def make_bigwig(infile, outfile):
     plus = outfile
     minus = outfile.replace('plus', 'minus')
     
-    cmd = '''bamCoverage -b %(infile)s -o %(outfile)s --filterRNAstrand forward -p %(threads)s &&
-             bamCoverage -b %(infile)s -o %(outfile)s --filterRNAstrand reverse -p %(threads)s'''
+    cmd = '''bamCoverage -b %(infile)s -o %(plus)s --filterRNAstrand forward -p %(threads)s &&
+             bamCoverage -b %(infile)s -o %(minus)s --filterRNAstrand reverse -p %(threads)s'''
     
     P.run(cmd, job_queue=P.PARAMS['queue'], job_threads=P.PARAMS['threads'])
 
